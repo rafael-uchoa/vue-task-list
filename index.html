@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app" class="container">
+      <form @submit.prevent="addTask()">
+        <div class="input-area">
+          <input
+            v-model="newTask"
+            type="text"
+            class="user-input"
+            placeholder="Enter task..."
+          />
+          <button type="submit" class="btn btn-submit">+</button>
+        </div>
+        <h1>Tasks</h1>
+        <ul>
+          <li
+            :class="{ doneContainer: task.done }"
+            class="task"
+            v-bind:key="task.id"
+            v-for="(task, i) in tasks"
+          >
+            <!-- Task Text -->
+            <span :class="{ doneText: task.done }">{{ task.title }}</span>
+            <div class="btn-container">
+              <!-- Done Button -->
+              <button
+                v-if="!task.done"
+                @click="markDone(task)"
+                type="button"
+                class="btn btn-check"
+              >
+                DONE
+              </button>
+              <!-- Undo Button -->
+              <button
+                v-if="task.done"
+                @click="markDone(task)"
+                type="button"
+                class="btn btn-undo"
+              >
+                UNDO
+              </button>
+              <!-- Delete Button -->
+              <button @click="remove(i)" type="button" class="btn btn-delete">
+                DELETE
+              </button>
+            </div>
+          </li>
+        </ul>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

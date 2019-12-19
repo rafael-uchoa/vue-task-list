@@ -1,0 +1,106 @@
+/* Resets */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Helvetica, sans-serif;
+  line-height: 1.4;
+  color: #4b4c57;
+}
+
+ul {
+  list-style: none;
+}
+
+h1 {
+  margin-bottom: 1rem;
+}
+
+/* Utility */
+.container {
+  width: 50rem;
+  height: 80vh;
+  overflow: auto;
+  margin: auto;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 1rem;
+}
+
+.btn {
+  background: #c72f2f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn-submit {
+  background: #e13535;
+}
+
+.btn-delete {
+  background: #e13535;
+}
+
+.btn-undo {
+  background: #c72f2f;
+  color: #f4f4f4;
+}
+
+/* Input Area */
+.input-area {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.user-input {
+  width: 100%;
+  border: none;
+  background: none;
+  padding: 1rem;
+  outline: none;
+  font-size: 18px;
+  border-bottom: 2px solid #f6f8f9;
+}
+
+/* Task */
+.task {
+  padding-left: 1rem;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2), 0 1px 2px 0 rgba(0, 0, 0, 0.19);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.doneContainer {
+  background: #f0f0f0;
+}
+
+.doneText {
+  text-decoration: line-through;
+  color: gray;
+}
+
+.btn-container {
+  display: inline-flex;
+}
+
+/* Responsive */
+@media only screen and (max-width: 1200px) {
+  .container {
+    width: 100vw;
+    height: 100vh;
+  }
+}
